@@ -1,0 +1,74 @@
+{
+  "projection": "EPSG:3031",
+  "initialView": {
+    "center": [
+      0,
+      0
+    ],
+    "zoom": 3,
+    "minZoom": 0.5,
+    "maxZoom": 12
+  },
+  "basemaps": [
+    {
+      "id": "argenmap_wmts",
+      "type": "WMTS",
+      "name": "Argenmap IGN",
+      "url": "https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG:3857@png/{z}/{x}/{-y}.png",
+      "projection": "EPSG:3857",
+      "attribution": "IGN Argentina",
+      "visible": true,
+      "reproject": true
+    },
+    {
+      "id": "ign_antartida_base",
+      "type": "WMS",
+      "name": "IGN Antártida (WMS)",
+      "url": "https://antartida-anida.ign.gob.ar/geoserver/Fondo_40bis/wms",
+      "layers": "Fondo_40bis:Fondo_40bis",
+      "projection": "EPSG:3031",
+      "attribution": "IGN Argentina",
+      "visible": false,
+      "reproject": false
+    },
+    {
+      "id": "google_sat",
+      "type": "XYZ",
+      "name": "Google Satellite (Reproyectado)",
+      "url": "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+      "projection": "EPSG:3857",
+      "attribution": "Google Maps",
+      "visible": false,
+      "reproject": true
+    }
+  ],
+  "layers": [
+    {
+      "id": "frentes_oceanicos",
+      "type": "WMS",
+      "name": "Frentes Oceánicos",
+      "url": "https://antartida-anida.ign.gob.ar/geoserver/frentes/wms",
+      "layers": "frentes:frentes_oceanicos",
+      "visible": true,
+      "queryable": true
+    },
+    {
+      "id": "cubierta_hielo",
+      "type": "WMS",
+      "name": "Cubierta de Hielo",
+      "url": "https://antartida-anida.ign.gob.ar/geoserver/Geomorfologia2/wms",
+      "layers": "Geomorfologia2:g2_cubierta_hielo",
+      "visible": false,
+      "queryable": true
+    },
+    {
+      "id": "bases_antarticas",
+      "type": "WMS",
+      "name": "Bases Antárticas",
+      "url": "https://antartida-anida.ign.gob.ar/geoserver/bases_antarticas_arg/wms",
+      "layers": "bases_antarticas_arg:bases_arg",
+      "visible": true,
+      "queryable": true
+    }
+  ]
+}

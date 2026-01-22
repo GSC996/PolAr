@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo de Integración Iframe</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .container {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Atlas Interactivo - Sección Antártida</h1>
+  <p>Este es un ejemplo de cómo el visor puede integrarse en un portal existente.</p>
+
+  <div class="container">
+    <!-- 
+            En producción, cambiar src por la URL real donde se despliegue el visor.
+            Para pruebas locales, usar la URL del servidor de desarrollo (ej: http://localhost:5173) 
+            o la ruta relativa si se sirve todo junto.
+        -->
+    <iframe src="../dist/index.html"></iframe>
+  </div>
+
+  <p>El visor opera de forma independiente pero integrado visualmente.</p>
+</body>
+
+</html>

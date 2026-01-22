@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visor Antártico</title>
+  <style>
+    /* Critical CSS to prevent FOUC */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div id="map" class="map"></div>
+
+    <div id="ui-container">
+      <!-- Basemap Panel -->
+      <div class="panel-wrapper">
+        <button class="panel-toggle" id="toggle-basemaps" title="Mapas Base">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </button>
+        <div id="basemap-panel" class="panel hidden">
+          <div class="panel-header">Mapas Base</div>
+          <div id="basemap-list" class="panel-content"></div>
+        </div>
+      </div>
+
+      <!-- Layers Panel -->
+      <div class="panel-wrapper">
+        <button class="panel-toggle" id="toggle-layers" title="Capas">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </button>
+        <div id="layers-panel" class="panel hidden">
+          <div class="panel-header">Capas Operativas</div>
+          <div id="layer-list" class="panel-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="share-container">
+      <button id="share-btn" class="btn primary share-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+        </svg>
+        Compartir
+      </button>
+    </div>
+
+    <!-- Feature Info Tooltip/Popup -->
+    <div id="info-tooltip" class="tooltip hidden"></div>
+
+    <!-- Loading Indicator -->
+    <div id="loader" class="loader">Cargando...</div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
