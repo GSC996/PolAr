@@ -5,7 +5,7 @@
       0,
       0
     ],
-    "zoom": 3,
+    "zoom": 2,
     "minZoom": 0.5,
     "maxZoom": 12
   },
@@ -44,21 +44,12 @@
   ],
   "layers": [
     {
-      "id": "frentes_oceanicos",
-      "type": "WMS",
-      "name": "Frentes Oceánicos",
-      "url": "https://antartida-anida.ign.gob.ar/geoserver/frentes/wms",
-      "layers": "frentes:frentes_oceanicos",
-      "visible": true,
-      "queryable": true
-    },
-    {
       "id": "cubierta_hielo",
       "type": "WMS",
       "name": "Cubierta de Hielo",
       "url": "https://antartida-anida.ign.gob.ar/geoserver/Geomorfologia2/wms",
       "layers": "Geomorfologia2:g2_cubierta_hielo",
-      "visible": false,
+      "visible": true,
       "queryable": true
     },
     {
@@ -67,7 +58,7 @@
       "name": "Bases Antárticas",
       "url": "https://antartida-anida.ign.gob.ar/geoserver/bases_antarticas_arg/wms",
       "layers": "bases_antarticas_arg:bases_arg",
-      "visible": true,
+      "visible": false,
       "queryable": true
     }
   ]
